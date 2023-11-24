@@ -1,0 +1,19 @@
+.scrollBtn {
+    position: fixed;
+    font-size: 2em;
+    /* margin: auto; */
+    /* left: 0; */
+    right: 0;
+    bottom: 6.25em;
+    z-index: 10;
+    /* border-radius: 50%; */
+  }
+  @keyframes move-down {
+    /* 80% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(5.3em);
+      opacity: 0;
+    } */
+  }

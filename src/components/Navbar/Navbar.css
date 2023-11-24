@@ -1,0 +1,45 @@
+/* Navbar.css */
+
+.navbar {
+    position: fixed;
+    background-color: #161616;
+    width: 100%;
+    opacity: 0.5;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  .scrolled {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    opacity: 1;
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+  }
+  
