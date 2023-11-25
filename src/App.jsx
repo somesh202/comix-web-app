@@ -91,7 +91,7 @@ function App() {
       <button className='shareBtn' onClick={handleScreenshotClick}>Share</button>
       <div className="heading">
       <h1>Create Captivating Comics with Ease</h1>
-      <h5>Turn Your Words into Vibrant Visual Stories!</h5>
+      <h5>Turn Your Words into Vibrant Visual Stories using AI !</h5>
       <ScrollButton />
     </div>
       <input className="c-checkbox" type="checkbox" id="checkbox" />
