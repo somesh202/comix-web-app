@@ -39,6 +39,8 @@ body {
     border-radius: 8px;
     display: inline-block;
     flex: 1 1;
+    
+    filter: drop-shadow(8px 8px 0px #000);
     height: 350px;
     width: 80vw;
     margin: 8vmin;
@@ -50,7 +52,6 @@ body {
 
 .panel img {
 
-    filter: drop-shadow(8px 8px 0px #000);
     width: 100%;
     display: block;
     margin: auto;

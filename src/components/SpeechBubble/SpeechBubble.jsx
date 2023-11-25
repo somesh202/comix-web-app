@@ -10,13 +10,12 @@ const handleInput = (e) => {
     // Update the content when the user types
     
     setContent(e.target.innerText);
-    localStorage.setItem('bubbleText', JSON.stringify(content));
+    // localStorage.setItem('bubbleText', JSON.stringify(content));
   };
   return (
-    <div className={`speech ${position}`} id='editable-div' 
+    <div className={`speech`} id='editable-div'style={{ unicodeBidi: 'normal' }}
     contentEditable={true}
-    onInput={handleInput}
-    placeholder="Start typing..." spellCheck='false'>
+    onSubmit={handleInput}>
     {content}
     </div>
   );
