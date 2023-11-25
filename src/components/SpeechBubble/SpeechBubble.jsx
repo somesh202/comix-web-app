@@ -15,7 +15,8 @@ const handleInput = (e) => {
   return (
     <div className={`speech`} id='editable-div'style={{ unicodeBidi: 'normal' }}
     contentEditable={true}
-    onSubmit={handleInput}>
+    onSubmit={handleInput}
+    spellCheck='false'>
     {content}
     </div>
   );
