@@ -54,7 +54,6 @@ return (
   <div className="panel"><SpeechBubble text={props.content8} position={props.pos8}/><img src={props.url8} alt=''/></div>
   <div className="panel">
   <SpeechBubble text={props.content9} position={props.pos9}/>
-    <p class="text bottom-right">THE END</p>
     <img src={props.url9} alt=''/>
   </div>
   <div className="panel">

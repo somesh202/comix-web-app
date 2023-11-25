@@ -5,6 +5,8 @@ import { Buffer } from 'buffer';
 import Navbar from './components/Navbar/Navbar';
 import ComicStrip from "./components/ComicStrip/ComicStrip"
 import ScrollButton from './components/ScrollButton/ScrollButton';
+import html2canvas from 'html2canvas';
+
 function App() {
   const [data, setData] = useState([]);
   const [prompt, setPrompt] = useState("");
@@ -52,10 +54,7 @@ function App() {
   const handleInputChange = (e) => {
     setPrompt(e.target.value);
   };
-  const ref = useRef(null);
-  const handleClick = () => {
-ref.current?.scrollIntoView({behavior: 'smooth'});
-  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (prompt.trim() !== '') {
@@ -70,10 +69,26 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
     localStorage.clear();
     window.location.reload()
   }
+  const divRef = useRef(null);
+
+  const handleScreenshotClick = () => {
+    if (divRef.current) {
+      html2canvas(divRef.current).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = imgData;
+        link.download = 'comic-strip.png';
+        link.click();
+      });
+    }
+    
+  };
   return (
     <div className="App">
       <Navbar />
       <section className='top-div'>
+        
+      <button className='shareBtn' onClick={handleScreenshotClick}>Share</button>
       <div className="heading">
       <h1>Create Captivating Comics with Ease</h1>
       <h5>Turn Your Words into Vibrant Visual Stories!</h5>
@@ -93,7 +108,7 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
             onChange={handleInputChange}
           />
           <label className="c-form__buttonLabel" htmlFor="checkbox">
-            <button onClick={handleClick} className="c-form__button" type="submit">
+            <button className="c-form__button" type="submit">
               Generate
             </button>
           </label>
@@ -119,9 +134,11 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
       )}
       </section>
       {/* <img src={data} /> */}
-      
-      <div id='strip'>
-      <ComicStrip ref={ref} url1={imageBytesArray[0]} 
+      <div className='head' style={{background: '#111'}}>
+        <h2 className='heading'>Your Comic Strip</h2>
+      </div>
+      <div ref={divRef} id='strip'>
+      <ComicStrip  url1={imageBytesArray[0]} 
       url2={imageBytesArray[1]} 
       url3={imageBytesArray[2]} 
       url4={imageBytesArray[3]} 

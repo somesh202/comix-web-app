@@ -8,11 +8,22 @@ body {
   height: 100vh;
   place-items: center;
 }
+#strip {
+  background: url('./dex-ezekiel-IxDPZ-AHfoI-unsplash.jpg');
+  background-color: #707070;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+.head {
+  font-size: 2em;
+  margin-top: -10px;
+  margin: 20px;
+}
 .top-div {
   background-image: url('./pexels-erik-mclean-6654177.jpg');
   background-blend-mode: multiply;
-  background-color: #6e6e6e;
-  height: 80vh;
+  background-color: #5b5b5b;
+  height: 100vh;
   
   background-size: cover;
 }
@@ -23,7 +34,23 @@ body {
   /* background-color: #3f51b5; */
   color: #fff;
 }
-
+.shareBtn {
+  position: fixed;
+  right: 0px;
+  margin: 10px;
+  width: 100px;
+  border-radius: 6px;
+  height: 28px;
+  outline: none;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(8px 8px 0px #000);
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+  z-index: 100;
+}
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -67,11 +94,17 @@ img {
 .delete-btn {
   width: 150px;
   height: 50px;
-  margin: 10px 30px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   filter: drop-shadow(8px 8px 0px #000);
-  font-family: 'Comic Sans', cursive;
+  font-family: Roboto, sans-serif;
   font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 90px;
   border-radius: 8px;
+  position: relative;
 }
 .delete-btn:hover {
   transform: scaleZ(0.6);
@@ -114,7 +147,7 @@ img {
 }
 
 .c-form__toggle {
-  color: #ff7b73;
+  color: #252525;
   top: 0;
   cursor: pointer;
   z-index: 1;
