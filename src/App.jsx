@@ -6,6 +6,8 @@ import Navbar from './components/Navbar/Navbar';
 import ComicStrip from "./components/ComicStrip/ComicStrip"
 import ScrollButton from './components/ScrollButton/ScrollButton';
 import html2canvas from 'html2canvas';
+import toast, {Toaster} from 'react-hot-toast';
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -38,9 +40,11 @@ function App() {
       setImageBytesArray(prevResults => [...prevResults, imgUrl]);
       
       localStorage.setItem('imageResults', JSON.stringify([...imageBytesArray, imgUrl]));
+      toast.success("Your image has been generated")
       // console.log(imgArr[0])
     } catch (error) {
       console.error('Error fetching data:', error);
+      toast.error("Unable to fetch data")
     }
     setLoading(false)
   };
@@ -60,7 +64,7 @@ function App() {
     if (prompt.trim() !== '') {
       fetchData(prompt);
 
-      setLoading(true)
+      setLoading(true);
     }
     setPrompt('')
   };
@@ -87,7 +91,7 @@ function App() {
     <div className="App">
       <Navbar />
       <section className='top-div'>
-        
+      <Toaster />
       <button className='shareBtn' onClick={handleScreenshotClick}>Share</button>
       <div className="heading">
       <h1>Create Captivating Comics with Ease</h1>
